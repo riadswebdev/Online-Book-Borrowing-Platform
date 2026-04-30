@@ -1,5 +1,14 @@
 [
-  { "id": 1, "title": "The Silent Forest", "category": "Story" },
-  { "id": 2, "title": "Mastering React", "category": "Tech" },
-  { "id": 3, "title": "Space Beyond Earth", "category": "Science" }
+  { "id": 1, "category": "Mystery" },
+  { "id": 2, "category": "Programming" },
+  { "id": 3, "category": "Science" },
+  { "id": 4, "category": "Mystery" },
+  { "id": 5, "category": "Programming" },
+  { "id": 6, "category": "Science" },
+  { "id": 7, "category": "History" },
+  { "id": 8, "category": "Programming" },
+  { "id": 9, "category": "Science" },
+  { "id": 10, "category": "Mystery" },
+  { "id": 11, "category": "Programming" },
+  { "id": 12, "category": "Technology" }
 ]

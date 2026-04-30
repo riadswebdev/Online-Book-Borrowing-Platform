@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col bg-linear-to-r from-gray-900 to-gray-950">
         <Navbar />
         <TopBooksMarque/>
-        <main className="w-full max-w-300 mx-auto ">{children}</main>
+        <main className="w-full max-w-350 mx-auto ">{children}</main>
       </body>
     </html>
   );

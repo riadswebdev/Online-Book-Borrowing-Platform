@@ -4,7 +4,7 @@
     "title": "The Silent Forest",
     "author": "Ayesha Rahman",
     "description": "A mysterious story of a forest where secrets whisper through the trees.",
-    "category": "Story",
+    "category": "Mystery",
     "available_quantity": 12,
     "image_url": "https://i.ibb.co.com/6R567jk0/The-Silent-Forest.png"
   },
@@ -13,7 +13,7 @@
     "title": "Mastering React",
     "author": "John Smith",
     "description": "A complete guide to building modern web apps using React.",
-    "category": "Tech",
+    "category": "Programming",
     "available_quantity": 8,
     "image_url": "https://i.ibb.co.com/PGjBt73h/Mastering-React.png"
   },
@@ -31,7 +31,7 @@
     "title": "Hidden Truth",
     "author": "Nusrat Jahan",
     "description": "A thrilling story uncovering secrets buried for decades.",
-    "category": "Story",
+    "category": "Mystery",
     "available_quantity": 10,
     "image_url": "https://i.ibb.co.com/mVR3BgrR/Hidden-Truth.png"
   },
@@ -40,7 +40,7 @@
     "title": "JavaScript Deep Dive",
     "author": "Michael Lee",
     "description": "Advanced concepts of JavaScript explained in a simple way.",
-    "category": "Tech",
+    "category": "Programming",
     "available_quantity": 7,
     "image_url": "https://i.ibb.co.com/ccGpYbsq/Java-Script-Deep-Dive.png"
   },
@@ -58,7 +58,7 @@
     "title": "Lost in Time",
     "author": "Arif Hossain",
     "description": "A journey through time with unexpected twists.",
-    "category": "Story",
+    "category": "History",
     "available_quantity": 9,
     "image_url": "https://i.ibb.co.com/HLgsn7L1/Lost-in-Time.png"
   },
@@ -67,7 +67,7 @@
     "title": "Next.js Essentials",
     "author": "Emily Davis",
     "description": "Learn how to build fast and scalable apps with Next.js.",
-    "category": "Tech",
+    "category": "Programming",
     "available_quantity": 11,
     "image_url": "https://i.ibb.co.com/gXjykMg/Next-js-Essentials.png"
   },
@@ -85,7 +85,7 @@
     "title": "Whispering Shadows",
     "author": "Tania Sultana",
     "description": "A dark story filled with suspense and mystery.",
-    "category": "Story",
+    "category": "Mystery",
     "available_quantity": 13,
     "image_url": "https://i.ibb.co.com/Lhn2gdxy/Whispering-Shadows.png"
   },
@@ -94,7 +94,7 @@
     "title": "Tailwind CSS Guide",
     "author": "David Kim",
     "description": "Design modern and responsive UIs using Tailwind CSS.",
-    "category": "Tech",
+    "category": "Programming",
     "available_quantity": 15,
     "image_url": "https://i.ibb.co.com/Myxn2WCx/Tailwind-CSS-Guide.png"
   },
@@ -103,7 +103,7 @@
     "title": "Future of AI",
     "author": "Dr. Lina Ahmed",
     "description": "A look into how artificial intelligence will shape our future.",
-    "category": "Science",
+    "category": "Technology",
     "available_quantity": 6,
     "image_url": "https://i.ibb.co.com/8gxg7RxS/Future-of-AI.png"
   }

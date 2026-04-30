@@ -1,39 +1,58 @@
-import { Button, Card, CloseButton } from "@heroui/react";
+import { Chip } from "@heroui/react";
+import Image from "next/image";
+import Link from "next/link";
 
- const  BooksCard =({b})=> {
+const BooksCard = ({ b }) => {
   return (
-    <Card className="w-full items-stretch md:flex-row">
-      <div className="relative h-[140px] w-full shrink-0 overflow-hidden rounded-2xl sm:h-[120px] sm:w-[120px]">
-        {/* <img
-          alt="Cherries"
-          className="pointer-events-none absolute inset-0 h-full w-full scale-125 object-cover select-none"
-          loading="lazy"
-          src="https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/docs/cherries.jpeg"
-        /> */}
+    <div className=" gap-5 ">
+      <Image
+        src={b.image_url}
+        width={300}
+        height={100}
+        alt="book"
+        className="rounded-2xl mb-6"
+      />
+      <div className="text-gray-200 text-start space-y-2">
+        <p className="text-2xl">{b.title}</p>
+        <p className="text-lg">
+          Author : <span className="text-base">{b.author}</span>
+        </p>
+
+        <div className="flex items-center gap-10">
+          <Chip>{b.category}</Chip>
+          <Link
+            href={""}
+            className="bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent font-semibold "
+          >
+            View Details
+          </Link>
+        </div>
       </div>
-      <div className="flex flex-1 flex-col gap-3">
-        <Card.Header className="gap-1">
-          <Card.Title className="pr-8">{b.title}!</Card.Title>
-          <Card.Description>
-            Lorem ipsum dolor sit amet consectetur. Sed arcu donec id aliquam
-            dolor sed amet faucibus etiam.
-          </Card.Description>
-          <CloseButton
-            aria-label="Close banner"
-            className="absolute top-3 right-3"
-          />
-        </Card.Header>
-        <Card.Footer className="mt-auto flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-col">
-            <span className="text-sm font-medium text-foreground">
-              Only 10 { b.category}
-            </span>
-            <span className="text-xs text-muted">Submission ends Oct 10.</span>
-          </div>
-          <Button className="w-full sm:w-auto">Apply Now</Button>
-        </Card.Footer>
-      </div>
-    </Card>
+    </div>
   );
-}
+};
 export default BooksCard;
+
+{
+  /* <div className=" gap-5 ">
+  <Image
+    src="https://i.ibb.co.com/Myxn2WCx/Tailwind-CSS-Guide.png"
+    width={300}
+    height={100}
+    alt="book"
+    unoptimized
+    className="rounded-2xl mb-6"
+  />
+  <div className="text-gray-200 text-start space-y-2">
+    <p className="text-2xl">{b.title}</p>
+    <p className="text-lg">
+      Author : <span className="text-base">{b.author}</span>
+    </p>
+    <p className="text-sm ">{b.description}</p>
+    <Chip>{b.category}</Chip>
+    <p>
+      Left Books Copy <span>{b.available_quantity} pies</span>
+    </p>
+  </div>
+</div>; */
+}
