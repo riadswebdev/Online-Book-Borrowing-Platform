@@ -13,7 +13,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-40 w-full  max-w-5xl mx-auto mt-6 border border-white/10 md:rounded-full   bg-gray-950 backdrop-blur-lg">
+    <nav className="sticky top-6 z-40 w-full mb-25 max-w-300 mx-auto mt-6 border border-white/10 md:rounded-full   bg-gray-950 backdrop-blur-lg">
       <header className="mx-auto flex h-16  items-center justify-between px-6">
         <div className="flex items-center gap-4">
           <button
@@ -57,6 +57,7 @@ const Navbar = () => {
                 alt="Books Logo"
               />
             </Link>
+            <div></div>
           </div>
         </div>
         <ul className="hidden items-center gap-4 md:flex">
@@ -89,17 +90,19 @@ const Navbar = () => {
         <div className="hidden items-center  gap-1 md:flex">
           <Button
             variant="tertiary"
-            className="font-semibold text-lg  bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent "
+            className="font-semibold text-lg bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent "
             href="#"
           >
             Login
           </Button>
-          <Button
-            variant="tertiary"
-            className="font-semibold text-lg  bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent "
-          >
-            Sign Up
-          </Button>
+          <div className="bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <Button
+              variant="tertiary"
+              className="font-semibold text-lg  bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent "
+            >
+              Sign Up
+            </Button>
+          </div>
         </div>
       </header>
       {isMenuOpen && (
