@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 
 const TopBooksMarque = async () => {
   const newBooks = await fetchBooksByCategory();
-  console.log(newBooks);
+  
 
   return (
     <div className="mx-5 xl:mx-0 ">
