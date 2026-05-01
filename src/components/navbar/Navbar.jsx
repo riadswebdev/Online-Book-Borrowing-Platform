@@ -1,20 +1,37 @@
 "use client";
-import { Button } from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
+import { Avatar, Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { AiOutlineFileUnknown } from "react-icons/ai";
 
 const Navbar = () => {
+  const router = useRouter();
+
   const pathName = usePathname();
-
-  const isActive = (path) => pathName === path;
-
+  const isActive = (path) => {
+    if (path === "/") return pathName === "/";
+    return pathName.startsWith(path);
+  };
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleSignOutBtn = async () => {
+    await authClient.signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          router.push("/signin");
+        },
+      },
+    });
+  };
+
+  const { data: session } = authClient.useSession();
+
   return (
-    <nav className="sticky top-1 z-40 w-full  max-w-300 mx-auto mt-1 border border-white/10 md:rounded-full   bg-gray-950 backdrop-blur-lg">
-      <header className="mx-auto flex h-16  items-center justify-between px-6">
+    <nav className=" sticky top-1 z-40 w-full  max-w-300 mx-auto mt-1 border border-white/10 md:rounded-full   bg-gray-950 backdrop-blur-lg">
+      <header className="relative mx-auto flex h-16  items-center justify-between px-6">
         <div className="flex items-center gap-4">
           <button
             className="md:hidden"
@@ -88,24 +105,63 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="hidden items-center  gap-1 md:flex">
-          <Button
-            variant="tertiary"
-            className="font-semibold text-lg bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent "
-          >
-            <Link href="/signin"> Login</Link>
-          </Button>
-          <div className="bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
-            <Button
-              variant="tertiary"
-              className="font-semibold text-lg  bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent "
-            >
-              <Link href="/signup">Sign Up</Link>
-            </Button>
-          </div>
+          {!session && (
+            <>
+              <Link href="/signin">
+                <Button
+                  variant="tertiary"
+                  className="font-semibold text-lg bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent "
+                >
+                  Login
+                </Button>
+              </Link>
+              <div className="bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+                <Link href="/signup">
+                  <Button
+                    variant="tertiary"
+                    className="font-semibold text-lg  bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent "
+                  >
+                    Sign Up
+                  </Button>
+                </Link>
+              </div>
+            </>
+          )}
+          {session && (
+            <div className="flex items-center gap-2">
+              <span className="text-gray-300 text-[12px] lg:text-sm">
+                {session?.user?.name}
+              </span>
+              <Button
+                onClick={handleSignOutBtn}
+                variant="tertiary"
+                className="font-semibold text-sm lg:text-base  bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent flex justify-center mx-auto "
+              >
+                Sign Out
+              </Button>
+            </div>
+          )}
         </div>
+        {session && (
+          <div className="absolute flex items-center gap-3 top-4 right-5 md:hidden">
+            <span className=" text-gray-300 text-[12px] lg:text-sm">
+              {session?.user?.name}
+            </span>
+            <Avatar size="sm">
+              <Avatar.Image
+                className="object-cover"
+                alt="John Doe"
+                src={session?.user?.image}
+              />
+              <Avatar.Fallback>
+                {session?.user?.name?.charAt(0) || <AiOutlineFileUnknown />}
+              </Avatar.Fallback>
+            </Avatar>
+          </div>
+        )}
       </header>
       {isMenuOpen && (
-        <div className="border-t border-separator md:hidden">
+        <div className=" border-t border-separator md:hidden">
           <ul className="flex flex-col gap-2 p-4 ">
             <li className="">
               <Link
@@ -132,22 +188,39 @@ const Navbar = () => {
                 Profile
               </Link>
             </li>
-            <li className="mt-4 flex flex-col gap-2 border-t border-separator pt-4">
-              <Button
-                variant="tertiary"
-                className="font-semibold text-lg bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent flex justify-center mx-auto "
-              >
-                <Link href="/signin"> Login</Link>
-              </Button>
-              <div className="bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <div className="mt-4 flex flex-col gap-2 border-t border-separator pt-4">
+              {!session && (
+                <>
+                  <Link href="/signin">
+                    <Button
+                      variant="tertiary"
+                      className="font-semibold text-lg bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent flex justify-center mx-auto "
+                    >
+                      Login
+                    </Button>
+                  </Link>
+                  <div className="bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+                    <Link href="/signup">
+                      <Button
+                        variant="tertiary"
+                        className="font-semibold text-lg  bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent flex justify-center mx-auto  "
+                      >
+                        Sign Up
+                      </Button>
+                    </Link>
+                  </div>
+                </>
+              )}
+              {session && (
                 <Button
+                  onClick={handleSignOutBtn}
                   variant="tertiary"
-                  className="font-semibold text-lg  bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent flex justify-center mx-auto  "
+                  className="font-semibold text-lg bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent flex justify-center mx-auto "
                 >
-                  <Link href="/signup">Sign Up</Link>
+                  Sign Out
                 </Button>
-              </div>
-            </li>
+              )}
+            </div>
           </ul>
         </div>
       )}

@@ -14,7 +14,7 @@ const BooksDetails = async ({ params }) => {
     
   return (
     <div
-      className="w-full max-w-280 mx-auto flex items-start
+      className="w-full max-w-280 mx-auto sm:flex  items-start
      gap-10 border p-6 border-white/5 mb-10 rounded-2xl"
     >
       <div className="flex-1">
@@ -27,7 +27,7 @@ const BooksDetails = async ({ params }) => {
           className="rounded-2xl  mx-auto "
         />
       </div>
-      <div className="text-gray-200 flex-2 flex flex-col justify-center text-start space-y-2">
+      <div className="text-gray-200 sm:flex-2 mt-10 flex flex-col justify-center text-start space-y-2">
         <p className="text-2xl">{b?.title}</p>
         <p className="text-lg">
           Author : <span className="text-base">{b.author}</span>

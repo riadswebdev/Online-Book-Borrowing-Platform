@@ -1,23 +1,31 @@
-import { Avatar, Button, Card } from "@heroui/react";
+'use client'
+
+import { Avatar, Card } from "@heroui/react";
 import Link from "next/link";
 import React from "react";
 import { PencilToSquare } from "@gravity-ui/icons";
+import { authClient } from "@/lib/auth-client";
+import { AiOutlineFileUnknown } from "react-icons/ai";
 
 const ProfilePage = () => {
+
+  const { data: session } = authClient.useSession();
+
   return (
     <div className="min-h-[60vh]">
-      <div className="flex justify-center my-10 items-center text-center">
-        <Card className="bg-transparent border w-96 ">
-          <Avatar className="mx-auto w-20 h-20">
-            <Avatar.Image
-              alt="John Doe"
-              src="https://i.ibb.co.com/C3r6qpV3/Designer-3-removebg-preview.png"
-            />
-            <Avatar.Fallback>JD</Avatar.Fallback>
+      <div className="flex justify-center my-10 items-center text-center mx-5 sm:mx-0">
+        <Card className="bg-transparent border border-gray-800 w-96 ">
+          <Avatar className="mx-auto w-20 h-20 my-5">
+            <Avatar.Image className="object-cover" alt="John Doe" src={session?.user?.image} />
+            <Avatar.Fallback>{session?.user?.name?.charAt(0) || <p className="flex items-center justify-center flex-col gap-1">
+              <AiOutlineFileUnknown />
+                Unknown
+            </p>
+            }</Avatar.Fallback>
           </Avatar>
-          <div className="text-gray-400 space-y-3">
-            <h3>Name</h3>
-            <h3>Email</h3>
+          <div className="text-gray-400 space-y-2">
+            <h3>{session?.user?.name}</h3>
+            <h3>{session?.user?.email}</h3>
 
             <Link className="flex justify-center items-center gap-2" href={"#"}>
               <PencilToSquare /> Edit

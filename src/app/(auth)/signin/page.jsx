@@ -1,10 +1,8 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import { useState } from "react";
 import { Eye, EyeSlash } from "@gravity-ui/icons";
-import { authClient } from "@/lib/auth-client";
-import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import {
@@ -18,57 +16,44 @@ import {
   TextField,
 } from "@heroui/react";
 
-const SignUpPage = () => {
-  const router = useRouter();
+const SignInPage = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [signUpError, setSignUpError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [signInError, setSignInError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    const form = new FormData(e.currentTarget);
-    const formData = Object.fromEntries(form.entries());
+    setIsLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const form = Object.fromEntries(formData.entries());
 
     try {
-      const { error } = await authClient.signUp.email({
-        email: formData.email,
-        password: formData.password,
-        image: formData.image,
-        name: formData.name,
+      const { error } = await authClient.signIn.email({
+        email: form.email,
+        password: form.password,
+        callbackURL: "/",
       });
 
       if (error) {
-        setSignUpError(error.message);
+        setSignInError(error.message);
+        toast.error(error.message);
       } else {
-        setSignUpError("");
-        toast.success("Successfully Account Created");
-        router.push("/signin");
+        setSignInError("");
       }
     } catch (e) {
-      setSignUpError("Something went wrong. Please try again.");
+      setSignInError("Something went wrong. Please try again.");
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
   return (
-    <div className="mx-auto flex rounded-md mb-20 w-full max-w-md flex-col items-center justify-center gap-6 px-4 bg-white">
-      <h4 className="mt-10 font-bold text-2xl sm:text-3xl">Sign Up </h4>
-      <p className="text-sm text-red-500">{signUpError}</p>
+    <div className="mx-auto flex rounded-md mb-20 w-full max-w-md flex-col items-center mt-10 justify-center gap-6 px-4 bg-white">
+      <h4 className="mt-10 font-bold text-2xl sm:text-3xl">Sign In </h4>
+
+      <p className="text-sm text-red-500">{signInError}</p>
       <Form className="flex w-96 flex-col  gap-4" onSubmit={onSubmit}>
-        <TextField isRequired name="name">
-          <Label>Full Name</Label>
-          <Input placeholder="Enter your full name" />
-          <FieldError />
-        </TextField>
-
-        <TextField isRequired name="image">
-          <Label>Photo Url</Label>
-          <Input placeholder="Enter a Image url" />
-          <FieldError />
-        </TextField>
-
         <TextField
           isRequired
           name="email"
@@ -94,13 +79,6 @@ const SignUpPage = () => {
             if (value.length < 8) {
               return "Password must be at least 8 characters";
             }
-            if (!/[A-Z]/.test(value)) {
-              return "Password must contain at least one uppercase letter";
-            }
-            if (!/[0-9]/.test(value)) {
-              return "Password must contain at least one number";
-            }
-
             return null;
           }}
         >
@@ -127,21 +105,34 @@ const SignUpPage = () => {
           </InputGroup>
         </TextField>
 
+        <div className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            name="rememberMe"
+            id="remember"
+            defaultChecked
+            className="w-4 h-4 rounded border-gray-300 focus:ring-blue-500"
+          />
+          <label htmlFor="remember" className="text-sm cursor-pointer">
+            Remember Me
+          </label>
+        </div>
+
         <div className="">
-          <Button disabled={loading} className="w-full mb-2" type="submit">
-            {loading ?
+          <Button isDisabled={isLoading} className="w-full mb-2" type="submit">
+            {isLoading ?
               <span className="flex items-center gap-2 justify-center">
-                Creating <Spinner color="current" size="sm" />
+                Login <Spinner color="current" size="sm" />
               </span>
-            : "Sign Up"}
+            : "Login"}
           </Button>
           <p className="text-center text-sm">
-            Already have an account?{" "}
+            Don`t have an account?{" "}
             <Link
-              href="/signin"
-              className="text-blue-800 font-semibold hover:underline"
+              href="/signup"
+              className="text-blue-500 font-semibold hover:underline"
             >
-              Sign In
+              Sign up
             </Link>
           </p>
         </div>
@@ -158,4 +149,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default SignInPage;
