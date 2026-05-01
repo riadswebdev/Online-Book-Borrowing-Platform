@@ -7,7 +7,7 @@ const MainLayout = ({children}) => {
       <>
         <Navbar />
         <TopBooksMarque />
-        {/* {children} */}
+        {children}
       </>
     );
 };

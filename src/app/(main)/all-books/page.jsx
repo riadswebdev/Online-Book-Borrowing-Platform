@@ -27,7 +27,8 @@ const AllBooksPage = async ({ searchParams }) => {
         <LeftCategorySideBar />
         <div className="col-span-3 text-center">
           <div className="sm:flex items-center justify-between mb-5">
-            <div className="  text-start  ">
+            <div className="  text-start  mb-2
+            ">
               <p className="text-lg sm:text-xl bg-linear-to-r from-blue-300 to-blue-800 bg-clip-text text-transparent font-semibold ">
                 Our Library
               </p>

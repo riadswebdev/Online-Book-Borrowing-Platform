@@ -7,7 +7,7 @@ import { IoLogoTwitter } from "react-icons/io";
 const Footer = () => {
   return (
     <div className="bg-linear-to-r from-gray-900 to-neutral-950 border-t pt-10 border-white/10 backdrop-blur-lg pb-10 px-5 xl:px-0">
-      <footer className="   grid space-y-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 w-full max-w-300 mx-auto">
+      <footer className="   grid space-y-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-full max-w-300 mx-auto">
         <aside className="lg:col-span-2">
           <Image
             src="https://i.ibb.co.com/jv6pG9NF/Designer-23.png"

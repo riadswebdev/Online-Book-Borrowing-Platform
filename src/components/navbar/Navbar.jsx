@@ -13,7 +13,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-6 z-40 w-full  max-w-300 mx-auto mt-6 border border-white/10 md:rounded-full   bg-gray-950 backdrop-blur-lg">
+    <nav className="sticky top-1 z-40 w-full  max-w-300 mx-auto mt-1 border border-white/10 md:rounded-full   bg-gray-950 backdrop-blur-lg">
       <header className="mx-auto flex h-16  items-center justify-between px-6">
         <div className="flex items-center gap-4">
           <button
