@@ -1,12 +1,14 @@
 import React from "react";
 import ProfilePage from "./profile/page";
 import Navbar from "@/components/navbar/Navbar";
+import { Toaster } from "react-hot-toast";
 
 const AuthLayout = ({ children }) => {
   return (
     <>
       <Navbar />
       {children}
+      <Toaster/>
     </>
   );
 };

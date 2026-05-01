@@ -37,7 +37,7 @@ const SignInPage = () => {
 
       if (error) {
         setSignInError(error.message);
-        toast.error(error.message);
+        
       } else {
         setSignInError("");
       }
@@ -46,6 +46,12 @@ const SignInPage = () => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleGoogleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
   };
 
   return (
@@ -141,7 +147,11 @@ const SignInPage = () => {
         <p className="text-center font-semibold text-lg mb-3 ">
           Or Sign in with
         </p>
-        <Button className="flex justify-center mx-auto mb-6" variant="tertiary">
+        <Button
+          onClick={handleGoogleSignIn}
+          className="flex justify-center mx-auto mb-6"
+          variant="tertiary"
+        >
           <Icon icon="devicon:google" />
         </Button>
       </div>

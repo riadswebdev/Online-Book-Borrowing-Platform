@@ -27,7 +27,7 @@ const ProfilePage = () => {
             <h3>{session?.user?.name}</h3>
             <h3>{session?.user?.email}</h3>
 
-            <Link className="flex justify-center items-center gap-2" href={"#"}>
+            <Link className="flex justify-center items-center gap-2" href="/updateProfile">
               <PencilToSquare /> Edit
             </Link>
           </div>

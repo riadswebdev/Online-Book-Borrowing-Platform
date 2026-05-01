@@ -36,6 +36,7 @@ const SignUpPage = () => {
         password: formData.password,
         image: formData.image,
         name: formData.name,
+        
       });
 
       if (error) {
@@ -52,11 +53,19 @@ const SignUpPage = () => {
     }
   };
 
+
+  const handleGoogleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
     <div className="mx-auto flex rounded-md mb-20 w-full max-w-md flex-col items-center justify-center gap-6 px-4 bg-white">
       <h4 className="mt-10 font-bold text-2xl sm:text-3xl">Sign Up </h4>
       <p className="text-sm text-red-500">{signUpError}</p>
       <Form className="flex w-96 flex-col  gap-4" onSubmit={onSubmit}>
+
         <TextField isRequired name="name">
           <Label>Full Name</Label>
           <Input placeholder="Enter your full name" />
@@ -87,6 +96,7 @@ const SignUpPage = () => {
         </TextField>
 
         <TextField
+          name="password"
           isRequired
           minLength={8}
           type="password"
@@ -150,7 +160,11 @@ const SignUpPage = () => {
         <p className="text-center font-semibold text-lg mb-3 ">
           Or Sign in with
         </p>
-        <Button className="flex justify-center mx-auto mb-6" variant="tertiary">
+        <Button
+          onClick={handleGoogleSignIn}
+          className="flex justify-center mx-auto mb-6"
+          variant="tertiary"
+        >
           <Icon icon="devicon:google" />
         </Button>
       </div>

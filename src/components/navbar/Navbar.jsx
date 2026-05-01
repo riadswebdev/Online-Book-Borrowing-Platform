@@ -152,6 +152,8 @@ const Navbar = () => {
                 className="object-cover"
                 alt="John Doe"
                 src={session?.user?.image}
+                referrerPolicy="no-referrer"
+                
               />
               <Avatar.Fallback>
                 {session?.user?.name?.charAt(0) || <AiOutlineFileUnknown />}
