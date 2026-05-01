@@ -91,45 +91,62 @@ const Navbar = () => {
           <Button
             variant="tertiary"
             className="font-semibold text-lg bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent "
-            href="#"
           >
-            Login
+            <Link href="/signin"> Login</Link>
           </Button>
           <div className="bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
             <Button
               variant="tertiary"
               className="font-semibold text-lg  bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent "
             >
-              Sign Up
+              <Link href="/signup">Sign Up</Link>
             </Button>
           </div>
         </div>
       </header>
       {isMenuOpen && (
         <div className="border-t border-separator md:hidden">
-          <ul className="flex flex-col gap-2 p-4">
-            <li>
-              <Link href="#" className="block py-2">
-                Features
+          <ul className="flex flex-col gap-2 p-4 ">
+            <li className="">
+              <Link
+                className={`text-white ${isActive("/") && "font-semibold text-lg bg-linear-to-r from-blue-600/50 to-blue-700/30  px-4 pb-2 pt-1 rounded-full"}`}
+                href="/"
+              >
+                Home
               </Link>
             </li>
             <li>
-              <Link href="#" className="block py-2 font-medium text-accent">
-                Dashboard
+              <Link
+                href="/all-books"
+                className={`text-white ${isActive("/all-books") && "font-semibold text-lg bg-linear-to-r from-blue-600/50 to-blue-700/30  px-4 pb-2 pt-1 rounded-full"}`}
+                aria-current="page"
+              >
+                All Books
               </Link>
             </li>
             <li>
-              <Link href="#" className="block py-2">
-                Pricing
+              <Link
+                className={`text-white ${isActive("/profile") && "font-semibold text-lg bg-linear-to-r from-blue-600/50 to-blue-700/30  px-4 pb-2 pt-1 rounded-full"}`}
+                href="/profile"
+              >
+                Profile
               </Link>
             </li>
             <li className="mt-4 flex flex-col gap-2 border-t border-separator pt-4">
-              <Link href="#" className="block py-2">
-                Login
-              </Link>
-              <Button variant="outline" className="w-full bg-white">
-                Sign Up
+              <Button
+                variant="tertiary"
+                className="font-semibold text-lg bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent flex justify-center mx-auto "
+              >
+                <Link href="/signin"> Login</Link>
               </Button>
+              <div className="bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+                <Button
+                  variant="tertiary"
+                  className="font-semibold text-lg  bg-linear-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent flex justify-center mx-auto  "
+                >
+                  <Link href="/signup">Sign Up</Link>
+                </Button>
+              </div>
             </li>
           </ul>
         </div>

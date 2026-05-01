@@ -1,11 +1,10 @@
-import { fetchBooksByCategory } from "@/data/FetchBooksData";
+import { fetchAllBooks } from "@/data/FetchBooksData";
 import { Button, Chip } from "@heroui/react";
 import React from "react";
 import Marquee from "react-fast-marquee";
 
 const TopBooksMarque = async () => {
-  const newBooks = await fetchBooksByCategory();
-  
+  const newBooks = await fetchAllBooks();
 
   return (
     <div className="mx-5 xl:mx-0 ">
@@ -14,10 +13,13 @@ const TopBooksMarque = async () => {
           New Books
         </Chip>
         <Marquee className="my-3" pauseOnHover>
-          <p>
+          <p className="flex items-center gap-20 ">
             {newBooks.slice(0, 4).map((b) => (
-              <span key={b.id} className="text-gray-300">
-                {b.title}
+              <span
+                key={b.id}
+                className="text-gray-300 flex items-center gap-5 ml-5"
+              >
+                <Chip>{b.category}</Chip> {b?.title}
               </span>
             ))}
           </p>

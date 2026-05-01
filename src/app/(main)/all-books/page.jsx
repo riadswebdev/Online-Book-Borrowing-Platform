@@ -18,8 +18,8 @@ const AllBooksPage = async ({ searchParams }) => {
   });
 
   return (
-    <div className="mx-5 xl:mx-0">
-      <h3 className="text-4xl font-semibold text-gray-400 mb-10 text-center">
+    <div className="mx-5 xl:mx-0 mb-10">
+      <h3 className="text-3xl font-semibold text-gray-400 mb-10 text-center">
         All Books
       </h3>
 

@@ -4,15 +4,15 @@ import Link from "next/link";
 
 const BooksCard = ({ b }) => {
   return (
-    <div className=" gap-5 ">
+    <div className=" gap-5 border border-white/5 p-6 rounded-2xl">
       <Image
         src={b.image_url}
-        width={300}
+        width={330}
         height={100}
         alt="book"
-        className="rounded-2xl mb-6"
+        className="rounded-2xl mb-6 mx-auto w-full"
       />
-      <div className="text-gray-200 text-start space-y-2">
+      <div className="text-gray-200 flex flex-col justify-center text-start space-y-2">
         <p className="text-2xl">{b.title}</p>
         <p className="text-lg">
           Author : <span className="text-base">{b.author}</span>
