@@ -6,7 +6,7 @@ import { fetchAllBooks } from "@/data/FetchBooksData";
 const AllBooksPage = async ({ searchParams }) => {
   const { category, search } = await searchParams;
   const AllBooks = await fetchAllBooks();
-  console.log(search);
+
   const filteredBooks = AllBooks.filter((b) => {
     const findCategory =
       category ? b.category.toLowerCase() === category : true;
@@ -16,6 +16,8 @@ const AllBooksPage = async ({ searchParams }) => {
 
     return findCategory && findSearch;
   });
+
+  
 
   return (
     <div className="mx-5 xl:mx-0 mb-10">
@@ -27,8 +29,10 @@ const AllBooksPage = async ({ searchParams }) => {
         <LeftCategorySideBar />
         <div className="col-span-3 text-center">
           <div className="sm:flex items-center justify-between mb-5">
-            <div className="  text-start  mb-2
-            ">
+            <div
+              className="  text-start  mb-2
+            "
+            >
               <p className="text-lg sm:text-xl bg-linear-to-r from-blue-300 to-blue-800 bg-clip-text text-transparent font-semibold ">
                 Our Library
               </p>
@@ -39,9 +43,19 @@ const AllBooksPage = async ({ searchParams }) => {
             <SearchFieldPage />
           </div>
           <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {filteredBooks.map((b) => (
-              <BooksCard key={b.id} b={b}></BooksCard>
-            ))}
+            {filteredBooks.length === 0 ?
+              <div className="col-span-full text-center py-10">
+                <p className="text-red-400 text-lg font-semibold">
+                  🔍 No books found
+                </p>
+                {search && (
+                  <p className="text-gray-400 text-sm mt-2">
+                    No result for "<span className="text-white">{search}</span>"
+                  </p>
+                )}
+              </div>
+            : filteredBooks.map((b) => <BooksCard key={b.id} b={b}></BooksCard>)
+            }
           </div>
         </div>
       </div>

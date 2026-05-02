@@ -15,6 +15,7 @@ import {
   Spinner,
   TextField,
 } from "@heroui/react";
+import toast from "react-hot-toast";
 
 const SignInPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,12 +38,14 @@ const SignInPage = () => {
 
       if (error) {
         setSignInError(error.message);
-        
+        toast.error(error.message)
       } else {
         setSignInError("");
+        toast("Welcome Back");
       }
     } catch (e) {
       setSignInError("Something went wrong. Please try again.");
+       toast.error("Something went wrong. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -52,11 +55,12 @@ const SignInPage = () => {
     await authClient.signIn.social({
       provider: "google",
     });
+    
   };
 
   return (
-    <div className="mx-auto flex rounded-md mb-20 w-full max-w-md flex-col items-center mt-10 justify-center gap-6 px-4 bg-white">
-      <h4 className="mt-10 font-bold text-2xl sm:text-3xl">Sign In </h4>
+    <div className="mx-auto flex rounded-md mb-20 w-full max-w-md flex-col items-center mt-10 justify-center gap-3 px-4 bg-black/35 backdrop-blur-2xl text-white ">
+      <h4 className="mt-10 font-bold text-xl sm:text-2xl">Sign In </h4>
 
       <p className="text-sm text-red-500">{signInError}</p>
       <Form className="flex w-96 flex-col  gap-4" onSubmit={onSubmit}>
@@ -72,8 +76,8 @@ const SignInPage = () => {
             return null;
           }}
         >
-          <Label>Email</Label>
-          <Input className="bg-gray-50" placeholder="Enter your email" />
+          <Label className="text-white">Email</Label>
+          <Input className="bg-transparent" placeholder="Enter your email" />
           <FieldError />
         </TextField>
 
@@ -88,14 +92,15 @@ const SignInPage = () => {
             return null;
           }}
         >
-          <Label>Password</Label>
+          <Label className="text-white">Password</Label>
           <InputGroup>
             <InputGroup.Input
               name="password"
+              className="bg-transparent"
               placeholder="Enter Your Password"
               type={isVisible ? "text" : "password"}
             />
-            <InputGroup.Suffix className="pr-0">
+            <InputGroup.Suffix className="pr-0 bg-transparent">
               <Button
                 isIconOnly
                 aria-label={isVisible ? "Hide password" : "Show password"}

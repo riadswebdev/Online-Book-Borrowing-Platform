@@ -10,11 +10,11 @@ const Footer = () => {
       <footer className="   grid space-y-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-full max-w-300 mx-auto">
         <aside className="lg:col-span-2">
           <Image
-            src="https://i.ibb.co.com/jv6pG9NF/Designer-23.png"
+            src="https://i.ibb.co.com/ds5NmBgD/Designer-3-removebg-preview.png"
             width={150}
             height={30}
             alt="footer Image"
-            className=" mb-2"
+            className=" mb-5"
           />
           <p className="text-gray-400 text-[12px] md:text-sm">
             A modern online library where users can explore, <br /> borrow, and

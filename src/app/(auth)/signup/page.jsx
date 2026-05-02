@@ -36,11 +36,11 @@ const SignUpPage = () => {
         password: formData.password,
         image: formData.image,
         name: formData.name,
-        
       });
 
       if (error) {
         setSignUpError(error.message);
+        toast.error(error.message)
       } else {
         setSignUpError("");
         toast.success("Successfully Account Created");
@@ -48,11 +48,11 @@ const SignUpPage = () => {
       }
     } catch (e) {
       setSignUpError("Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
   };
-
 
   const handleGoogleSignIn = async () => {
     await authClient.signIn.social({
@@ -61,20 +61,25 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="mx-auto flex rounded-md mb-20 w-full max-w-md flex-col items-center justify-center gap-6 px-4 bg-white">
-      <h4 className="mt-10 font-bold text-2xl sm:text-3xl">Sign Up </h4>
+    <div className="mx-auto mt-10 flex rounded-md mb-20 w-full max-w-md flex-col items-center justify-center gap-3 px-4   bg-black/35 text-white">
+      <h4 className="mt-5 font-bold text-xl sm:text-2xl">Sign Up </h4>
       <p className="text-sm text-red-500">{signUpError}</p>
       <Form className="flex w-96 flex-col  gap-4" onSubmit={onSubmit}>
-
         <TextField isRequired name="name">
-          <Label>Full Name</Label>
-          <Input placeholder="Enter your full name" />
+          <Label className="text-white">Full Name</Label>
+          <Input
+            className="bg-transparent border border-gray-700 text-gray-400"
+            placeholder="Enter your full name"
+          />
           <FieldError />
         </TextField>
 
         <TextField isRequired name="image">
-          <Label>Photo Url</Label>
-          <Input placeholder="Enter a Image url" />
+          <Label className="text-white">Photo Url</Label>
+          <Input
+            className="bg-transparent border border-gray-700 text-gray-400"
+            placeholder="Enter a Image url"
+          />
           <FieldError />
         </TextField>
 
@@ -90,8 +95,11 @@ const SignUpPage = () => {
             return null;
           }}
         >
-          <Label>Email</Label>
-          <Input className="bg-gray-50" placeholder="Enter your email" />
+          <Label className="text-white">Email</Label>
+          <Input
+            className="bg-transparent border border-gray-700 text-gray-300"
+            placeholder="Enter your email"
+          />
           <FieldError />
         </TextField>
 
@@ -114,8 +122,8 @@ const SignUpPage = () => {
             return null;
           }}
         >
-          <Label>Password</Label>
-          <InputGroup>
+          <Label className="text-white">Password</Label>
+          <InputGroup className="bg-transparent border border-gray-700 text-gray-400 rounded-2xl overflow-hidden">
             <InputGroup.Input
               name="password"
               placeholder="Enter Your Password"
@@ -137,7 +145,7 @@ const SignUpPage = () => {
           </InputGroup>
         </TextField>
 
-        <div className="">
+        <div className="mt-5">
           <Button disabled={loading} className="w-full mb-2" type="submit">
             {loading ?
               <span className="flex items-center gap-2 justify-center">

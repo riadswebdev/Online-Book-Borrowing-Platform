@@ -1,17 +1,13 @@
 import BorrowButton from "@/components/borrowButton/BorrowButton";
 import { fetchAllBooks } from "@/data/FetchBooksData";
-import { Button, Chip } from "@heroui/react";
+import { Chip } from "@heroui/react";
 import Image from "next/image";
-import Link from "next/link";
 
 const BooksDetails = async ({ params }) => {
   const { id } = await params;
   const Books = await fetchAllBooks();
   const b = Books.find((b) => b.id == id);
- 
-    
-  
-    
+
   return (
     <div
       className="w-full max-w-280 mx-auto sm:flex  items-start
@@ -41,7 +37,7 @@ const BooksDetails = async ({ params }) => {
           <p>
             <Chip>{b?.category}</Chip>
           </p>
-          <BorrowButton/>
+          <BorrowButton />
         </div>
       </div>
     </div>
@@ -49,4 +45,3 @@ const BooksDetails = async ({ params }) => {
 };
 
 export default BooksDetails;
-

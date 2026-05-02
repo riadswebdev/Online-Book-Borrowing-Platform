@@ -6,7 +6,7 @@
     "description": "A mysterious story of a forest where secrets whisper through the trees.",
     "category": "Mystery",
     "available_quantity": 12,
-    "image_url": "https://i.ibb.co.com/6R567jk0/The-Silent-Forest.png"
+    "image_url": "https://i.ibb.co.com/4RtHHLTr/The-Silent-Forest-removebg-preview.png"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "description": "A complete guide to building modern web apps using React.",
     "category": "Programming",
     "available_quantity": 8,
-    "image_url": "https://i.ibb.co.com/PGjBt73h/Mastering-React.png"
+    "image_url": "https://i.ibb.co.com/k2bqPRPQ/Mastering-React-removebg-preview.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "description": "Explore the mysteries of the universe and beyond.",
     "category": "Science",
     "available_quantity": 5,
-    "image_url": "https://i.ibb.co.com/Pv2JDDNB/Space-Beyond-Earth.png"
+    "image_url": "https://i.ibb.co.com/NdkmY7xY/Space-Beyond-Earth-removebg-preview.png"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "description": "A thrilling story uncovering secrets buried for decades.",
     "category": "Mystery",
     "available_quantity": 10,
-    "image_url": "https://i.ibb.co.com/mVR3BgrR/Hidden-Truth.png"
+    "image_url": "https://i.ibb.co.com/3yP47CBS/Hidden-Truth-removebg-preview.png"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "description": "Advanced concepts of JavaScript explained in a simple way.",
     "category": "Programming",
     "available_quantity": 7,
-    "image_url": "https://i.ibb.co.com/ccGpYbsq/Java-Script-Deep-Dive.png"
+    "image_url": "https://i.ibb.co.com/V0Df0Q51/Java-Script-Deep-Dive-removebg-preview.png"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "description": "An in-depth look at how the human brain works.",
     "category": "Science",
     "available_quantity": 6,
-    "image_url": "https://i.ibb.co.com/93hG1fv5/The-Human-Brain.png"
+    "image_url": "https://i.ibb.co.com/sJKFZ4tr/The-Human-Brain-removebg-preview.png"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "description": "A journey through time with unexpected twists.",
     "category": "History",
     "available_quantity": 9,
-    "image_url": "https://i.ibb.co.com/1GQhjTqF/Lost-The-Time.png"
+    "image_url": "https://i.ibb.co.com/YTRKChD1/Lost-in-Time-removebg-preview.png"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "description": "Learn how to build fast and scalable apps with Next.js.",
     "category": "Programming",
     "available_quantity": 11,
-    "image_url": "https://i.ibb.co.com/gXjykMg/Next-js-Essentials.png"
+    "image_url": "https://i.ibb.co.com/YF715B3x/Next-js-Essentials-removebg-preview-1.png"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "description": "Understanding the strange world of quantum physics.",
     "category": "Science",
     "available_quantity": 4,
-    "image_url": "https://i.ibb.co.com/jPqhH418/Quantum-World.png"
+    "image_url": "https://i.ibb.co.com/YFt1MPhZ/Quantum-World-removebg-preview.png"
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "description": "A dark story filled with suspense and mystery.",
     "category": "Mystery",
     "available_quantity": 13,
-    "image_url": "https://i.ibb.co.com/Lhn2gdxy/Whispering-Shadows.png"
+    "image_url": "https://i.ibb.co.com/PGnTG1t4/Whispering-Shadows-removebg-preview.png"
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "description": "Design modern and responsive UIs using Tailwind CSS.",
     "category": "Programming",
     "available_quantity": 15,
-    "image_url": "https://i.ibb.co.com/Myxn2WCx/Tailwind-CSS-Guide.png"
+    "image_url": "https://i.ibb.co.com/QwqpDLS/Tailwind-CSS-Guide-removebg-preview.png"
   },
   {
     "id": 12,
@@ -105,6 +105,6 @@
     "description": "A look into how artificial intelligence will shape our future.",
     "category": "Technology",
     "available_quantity": 6,
-    "image_url": "https://i.ibb.co.com/8gxg7RxS/Future-of-AI.png"
+    "image_url": "https://i.ibb.co.com/3mD7nb7q/Future-of-AI-removebg-preview.png"
   }
 ]

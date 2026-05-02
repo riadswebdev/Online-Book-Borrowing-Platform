@@ -17,6 +17,7 @@ justify-between mx-5 xl:mx-0 p-10 rounded-4xl"
           alt=""
           width={500}
           height={50}
+          unoptimized
           className="mx-auto"
         />
       </div>
