@@ -9,6 +9,10 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
+  trustedOrigins: [
+    "http://localhost:3000",
+    "https://online-book-borrowing-platform-zeta.vercel.app",
+  ],
   socialProviders: {
     google: {
       clientId: process.env.CLIENT_ID,
