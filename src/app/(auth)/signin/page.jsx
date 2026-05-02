@@ -77,7 +77,10 @@ const SignInPage = () => {
           }}
         >
           <Label className="text-white">Email</Label>
-          <Input className="bg-transparent" placeholder="Enter your email" />
+          <Input
+            className="bg-transparent text-gray-400"
+            placeholder="Enter your email"
+          />
           <FieldError />
         </TextField>
 
