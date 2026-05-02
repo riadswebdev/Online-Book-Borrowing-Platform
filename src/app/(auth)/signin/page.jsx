@@ -93,7 +93,7 @@ const SignInPage = () => {
           }}
         >
           <Label className="text-white">Password</Label>
-          <InputGroup>
+          <InputGroup className="bg-transparent border border-gray-700 text-gray-400 rounded-2xl overflow-hidden">
             <InputGroup.Input
               name="password"
               className="bg-transparent"
