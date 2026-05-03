@@ -1,4 +1,9 @@
-"use client";
+export async function generateMetadata() {
+  return {
+    title: "404 - Page Not Found | Book Borrowing",
+    description: "The page you are looking for does not exist on Book Borrowing.",
+  };
+}
 
 import Link from "next/link";
 

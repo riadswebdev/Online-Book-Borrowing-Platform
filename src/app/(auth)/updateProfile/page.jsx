@@ -2,7 +2,7 @@
 
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaCircleUser } from "react-icons/fa6";
 import {
   Button,
@@ -15,6 +15,10 @@ import {
 } from "@heroui/react";
 
 const UpdateProfile = () => {
+  useEffect(() => {
+    document.title = "Update Profile | Book Borrowing";
+  }, []);
+
   const [isLoading, setLoading] = useState(false);
 
   const router = useRouter();

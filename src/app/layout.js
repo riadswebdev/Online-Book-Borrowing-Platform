@@ -15,7 +15,7 @@ const inter = Inter ({
 })
 
 export const metadata = {
-  title: "Book Borrowing Platform",
+  title: "Book Borrowing",
   description: "Online Book Borrowing Platform",
 };
 

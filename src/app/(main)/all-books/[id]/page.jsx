@@ -1,3 +1,13 @@
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const Books = await fetchAllBooks();
+  const b = Books.find((b) => b.id == id);
+  return {
+    title: b ? `${b.title} | Book Borrowing` : "Book Details | Book Borrowing",
+    description: b ? b.description : "Details about the selected book in our borrowing platform.",
+  };
+}
+
 import BorrowButton from "@/components/borrowButton/BorrowButton";
 import { fetchAllBooks } from "@/data/FetchBooksData";
 import { Chip } from "@heroui/react";

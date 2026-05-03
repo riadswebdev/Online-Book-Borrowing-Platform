@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Eye, EyeSlash } from "@gravity-ui/icons";
 
 import toast from "react-hot-toast";
@@ -20,6 +20,11 @@ import {
 import { authClient } from "@/lib/auth-client";
 
 const SignUpPage = () => {
+
+useEffect(() => {
+    document.title = "Sign Up | Book Borrowing";
+  }, []);
+
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const [signUpError, setSignUpError] = useState("");

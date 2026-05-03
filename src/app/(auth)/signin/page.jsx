@@ -1,7 +1,7 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Eye, EyeSlash } from "@gravity-ui/icons";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
@@ -18,6 +18,12 @@ import {
 import toast from "react-hot-toast";
 
 const SignInPage = () => {
+
+useEffect(() => {
+    document.title = "Sign In | Book Borrowing";
+  }, []);
+
+
   const [isVisible, setIsVisible] = useState(false);
   const [signInError, setSignInError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
