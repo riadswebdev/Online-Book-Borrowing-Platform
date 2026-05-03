@@ -4,7 +4,10 @@ export async function generateMetadata({ params }) {
   const b = Books.find((b) => b.id == id);
   return {
     title: b ? `${b.title} | Book Borrowing` : "Book Details | Book Borrowing",
-    description: b ? b.description : "Details about the selected book in our borrowing platform.",
+    description:
+      b ?
+        b.description
+      : "Details about the selected book in our borrowing platform.",
   };
 }
 
@@ -18,6 +21,16 @@ const BooksDetails = async ({ params }) => {
   const Books = await fetchAllBooks();
   const b = Books.find((b) => b.id == id);
 
+  if (!b) {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center text-white text-2xl">
+        Book not found
+      </div>
+    );
+  }
+
+ 
+
   return (
     <div
       className="w-full max-w-280 mx-auto sm:flex  items-start
@@ -28,7 +41,7 @@ const BooksDetails = async ({ params }) => {
           src={b?.image_url}
           width={250}
           height={100}
-          alt="book"
+          alt={b?.title || "book"}
           unoptimized
           className="rounded-2xl  mx-auto "
         />
@@ -36,7 +49,7 @@ const BooksDetails = async ({ params }) => {
       <div className="text-gray-200 sm:flex-2 mt-10 flex flex-col justify-center text-start space-y-2">
         <p className="text-2xl">{b?.title}</p>
         <p className="text-lg">
-          Author : <span className="text-base">{b.author}</span>
+          Author : <span className="text-base">{b?.author}</span>
         </p>
         <p className="text-sm ">{b?.description}</p>
 

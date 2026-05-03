@@ -9,7 +9,7 @@ const BooksCard = ({ b }) => {
         <Image
           src={b?.image_url}
           fill
-          alt="book"
+          alt={b?.title || "book"}
           unoptimized
           className="rounded-2xl mx-auto  object-contain hover:scale-105 duration-300"
         />

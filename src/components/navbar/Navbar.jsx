@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { AiOutlineFileUnknown } from "react-icons/ai";
+import RoundedLoading from "../Loading/RoundedLoading";
 
 const Navbar = () => {
   const router = useRouter();
@@ -28,7 +29,7 @@ const Navbar = () => {
     });
   };
 
-  const { data: session } = authClient.useSession();
+  const { data: session ,isPending } = authClient.useSession();
 
   return (
     <nav className=" sticky top-1 z-40 w-full  max-w-300 mx-auto mt-1 border border-white/10 md:rounded-full   bg-gray-950 backdrop-blur-lg">
@@ -149,15 +150,20 @@ const Navbar = () => {
               {session?.user?.name}
             </span>
             <Avatar size="sm">
-              <Avatar.Image
-                className="object-cover"
-                alt="John Doe"
-                src={session?.user?.image}
-                referrerPolicy="no-referrer"
-              />
-              <Avatar.Fallback>
-                {session?.user?.name?.charAt(0) || <AiOutlineFileUnknown />}
-              </Avatar.Fallback>
+              {isPending ?
+                <RoundedLoading />
+              : <>
+                  <Avatar.Image
+                    className="object-cover"
+                    alt={session?.user?.name || "User"}
+                    src={session?.user?.image}
+                    referrerPolicy="no-referrer"
+                  />
+                  <Avatar.Fallback>
+                    {session?.user?.name?.charAt(0) || <AiOutlineFileUnknown />}
+                  </Avatar.Fallback>
+                </>
+              }
             </Avatar>
           </div>
         )}

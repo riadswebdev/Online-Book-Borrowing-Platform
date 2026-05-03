@@ -4,6 +4,9 @@ import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FaCircleUser } from "react-icons/fa6";
+import toast from "react-hot-toast";
+import { isValidImageUrl } from "@/utils/validation";
+
 import {
   Button,
   FieldError,
@@ -25,17 +28,34 @@ const UpdateProfile = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-
     const form = new FormData(e.currentTarget);
     const formData = Object.fromEntries(form.entries());
-    await authClient.updateUser({
-      image: formData.image,
-      name: formData.name,
-    });
 
-    router.push("/profile");
+    if (!isValidImageUrl(formData.image)) {
+      toast.error("Please enter a valid image URL (jpg, jpeg, png, webp, gif)");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const { error } = await authClient.updateUser({
+        image: formData.image,
+        name: formData.name,
+      });
+
+      if (error) {
+        toast.error(error.message || "Failed to update profile");
+      } else {
+        toast.success("Profile updated successfully");
+        router.push("/profile");
+      }
+    } catch (err) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
+
 
   return (
     <div className="mx-auto flex rounded-md mb-20 w-full max-w-md flex-col items-center mt-10 justify-center gap-6 px-4 bg-black/35 text-white">
@@ -54,7 +74,16 @@ const UpdateProfile = () => {
           <FieldError />
         </TextField>
 
-        <TextField isRequired name="image">
+        <TextField
+          isRequired
+          name="image"
+          validate={(value) => {
+            if (!isValidImageUrl(value)) {
+              return "Please enter a valid image URL (jpg, jpeg, png, webp, gif)";
+            }
+            return null;
+          }}
+        >
           <Label className="text-white">Photo Url</Label>
           <Input
             className="bg-transparent border border-gray-700 text-gray-400"
@@ -62,6 +91,7 @@ const UpdateProfile = () => {
           />
           <FieldError />
         </TextField>
+
 
         <div className="">
           <Button isDisabled={isLoading} className="w-full mb-10" type="submit">

@@ -18,6 +18,8 @@ import {
   TextField,
 } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
+import { isValidImageUrl } from "@/utils/validation";
+
 
 const SignUpPage = () => {
 
@@ -80,7 +82,16 @@ useEffect(() => {
           <FieldError />
         </TextField>
 
-        <TextField isRequired name="image">
+        <TextField
+          isRequired
+          name="image"
+          validate={(value) => {
+            if (!isValidImageUrl(value)) {
+              return "Please enter a valid image URL (jpg, jpeg, png, webp, gif)";
+            }
+            return null;
+          }}
+        >
           <Label className="text-white">Photo Url</Label>
           <Input
             className="bg-transparent border border-gray-700 text-gray-400"
@@ -88,6 +99,7 @@ useEffect(() => {
           />
           <FieldError />
         </TextField>
+
 
         <TextField
           isRequired
