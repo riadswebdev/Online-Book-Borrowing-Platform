@@ -4,8 +4,8 @@ import FeaturePage from "@/components/feature/Feature";
 
 export default function Home() {
   return <>
-    {/* <HeroSection /> */}
-    {/* <FeaturePage/> */}
+    <HeroSection />
+    <FeaturePage/>
     <AppPromoSection/>
   </>;
 }

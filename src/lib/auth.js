@@ -10,6 +10,10 @@ export const auth = betterAuth({
     enabled: true,
     autoSignIn: false,
   },
+  trustedOrigins: [
+    "http://localhost:3000",
+    "https://online-book-borrowing-platform-delta.vercel.app",
+  ],
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID,
