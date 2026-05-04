@@ -1,3 +1,8 @@
+import BorrowButton from "@/components/borrowButton/BorrowButton";
+import { fetchAllBooks } from "@/data/FetchBooksData";
+import { Chip } from "@heroui/react";
+import Image from "next/image";
+
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const Books = await fetchAllBooks();
@@ -11,11 +16,6 @@ export async function generateMetadata({ params }) {
   };
 }
 
-import BorrowButton from "@/components/borrowButton/BorrowButton";
-import { fetchAllBooks } from "@/data/FetchBooksData";
-import { Chip } from "@heroui/react";
-import Image from "next/image";
-
 const BooksDetails = async ({ params }) => {
   const { id } = await params;
   const Books = await fetchAllBooks();
@@ -28,8 +28,6 @@ const BooksDetails = async ({ params }) => {
       </div>
     );
   }
-
- 
 
   return (
     <div

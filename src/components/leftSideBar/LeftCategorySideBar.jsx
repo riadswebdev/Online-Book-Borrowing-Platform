@@ -6,7 +6,6 @@ const LeftCategorySideBar = async () => {
   const category = await fetchBooksByCategory();
   return (
     <div>
-      
       <div className="mt-10">
         {category.map((c) => (
           <Link key={c.id} href={`?category=${c.category.toLowerCase()}`}>

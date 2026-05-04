@@ -1,16 +1,19 @@
-export async function generateMetadata({ searchParams }) {
-  const { category, search } = await searchParams;
-  const title = search ? `Search: ${search}` : category ? `Category: ${category}` : "All Books";
-  return {
-    title: `${title} | Book Borrowing`,
-    description: `Explore our collection of books in ${category || 'all categories'}. Search and borrow books online.`,
-  };
-}
-
 import BooksCard from "@/components/booksCard/BooksCard";
 import LeftCategorySideBar from "@/components/leftSideBar/LeftCategorySideBar";
 import SearchFieldPage from "@/components/searchField/SearchField";
 import { fetchAllBooks } from "@/data/FetchBooksData";
+
+export async function generateMetadata({ searchParams }) {
+  const { category, search } = await searchParams;
+  const title =
+    search ? `Search: ${search}`
+    : category ? `Category: ${category}`
+    : "All Books";
+  return {
+    title: `${title} | Book Borrowing`,
+    description: `Explore our collection of books in ${category || "all categories"}. Search and borrow books online.`,
+  };
+}
 
 const AllBooksPage = async ({ searchParams }) => {
   const { category, search } = await searchParams;
@@ -25,8 +28,6 @@ const AllBooksPage = async ({ searchParams }) => {
 
     return findCategory && findSearch;
   });
-
-  
 
   return (
     <div className="mx-5 xl:mx-0 mb-10">

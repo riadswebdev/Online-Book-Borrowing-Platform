@@ -56,7 +56,6 @@ const UpdateProfile = () => {
     }
   };
 
-
   return (
     <div className="mx-auto flex rounded-md mb-20 w-full max-w-md flex-col items-center mt-10 justify-center gap-6 px-4 bg-black/35 text-white">
       <h4 className="mt-10 font-bold text-xl sm:text-2xl ">
@@ -91,7 +90,6 @@ const UpdateProfile = () => {
           />
           <FieldError />
         </TextField>
-
 
         <div className="">
           <Button isDisabled={isLoading} className="w-full mb-10" type="submit">

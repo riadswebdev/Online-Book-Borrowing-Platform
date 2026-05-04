@@ -39,6 +39,11 @@ const Footer = () => {
               All Books
             </Link>
           </li>
+          <li>
+            <Link className="text-gray-400 hover:underline" href="#">
+              About
+            </Link>
+          </li>
         </ul>
 
         <ul className="mb-4">
@@ -53,6 +58,12 @@ const Footer = () => {
               Privacy
             </Link>
           </li>
+        </ul>
+
+        <ul className="mb-4">
+          <h4 className="text-gray-300 font-semibold mb-3">Contact Us</h4>
+          <li className="text-gray-400 text-sm">Email: info@booklibrary.com</li>
+          <li className="text-gray-400 text-sm">Phone: +880 123 456 789</li>
         </ul>
 
         <div className="flex gap-3">

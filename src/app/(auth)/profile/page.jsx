@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { PencilToSquare } from "@gravity-ui/icons";
 import { AiOutlineFileUnknown } from "react-icons/ai";
 import { authClient } from "@/lib/auth-client";
-import Image from "next/image";
 import RoundedLoading from "@/components/Loading/RoundedLoading";
 
 const ProfilePage = () => {

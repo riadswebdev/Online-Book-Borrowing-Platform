@@ -7,7 +7,7 @@ export const fetchAllBooks = async () => {
     const jsonData = await fs.readFile(filePath, "utf-8");
     return JSON.parse(jsonData);
   } catch (error) {
-    console.error("Error fetching all books:", error);
+
     return [];
   }
 };
@@ -18,7 +18,7 @@ export const fetchBooksByCategory = async () => {
     const jsonData = await fs.readFile(filePath, "utf-8");
     return JSON.parse(jsonData);
   } catch (error) {
-    console.error("Error fetching categories:", error);
+   
     return [];
   }
 };

@@ -29,7 +29,7 @@ const Navbar = () => {
     });
   };
 
-  const { data: session ,isPending } = authClient.useSession();
+  const { data: session, isPending } = authClient.useSession();
 
   return (
     <nav className=" sticky top-1 z-40 w-full  max-w-300 mx-auto mt-1 border border-white/10 md:rounded-full   bg-gray-950 backdrop-blur-lg">
