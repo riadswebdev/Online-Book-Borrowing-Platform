@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
-import { isValidImageUrl } from "@/utils/validation";
+import { isValidImageUrl } from "../../../utils/validation";
 import {
   Button,
   FieldError,
