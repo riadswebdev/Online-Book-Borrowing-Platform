@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FaCircleUser } from "react-icons/fa6";
 import toast from "react-hot-toast";
-import { isValidImageUrl } from "@/utils/validation";
 
 import {
   Button,
@@ -30,11 +29,6 @@ const UpdateProfile = () => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const formData = Object.fromEntries(form.entries());
-
-    if (!isValidImageUrl(formData.image)) {
-      toast.error("Please enter a valid image URL (jpg, jpeg, png, webp, gif)");
-      return;
-    }
 
     setLoading(true);
     try {
@@ -73,16 +67,7 @@ const UpdateProfile = () => {
           <FieldError />
         </TextField>
 
-        <TextField
-          isRequired
-          name="image"
-          validate={(value) => {
-            if (!isValidImageUrl(value)) {
-              return "Please enter a valid image URL (jpg, jpeg, png, webp, gif)";
-            }
-            return null;
-          }}
-        >
+        <TextField isRequired name="image">
           <Label className="text-white">Photo Url</Label>
           <Input
             className="bg-transparent border border-gray-700 text-gray-400"
