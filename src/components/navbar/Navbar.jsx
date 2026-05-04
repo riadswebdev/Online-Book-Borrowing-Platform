@@ -36,35 +36,27 @@ const Navbar = () => {
       <header className="relative mx-auto flex h-16  items-center justify-between px-6">
         <div className="flex items-center gap-4">
           <button
-            className="md:hidden"
+            className="md:hidden cursor-pointer"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
-            <span className="sr-only">Menu</span>
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isMenuOpen ?
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                  className="text-white"
-                />
-              : <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                  className="text-white"
-                />
+            <Avatar size="sm">
+              {isPending ?
+                <RoundedLoading />
+              : <>
+                  <Avatar.Image
+                    className="object-cover"
+                    alt={session?.user?.name || "User"}
+                    src={session?.user?.image}
+                    referrerPolicy="no-referrer"
+                  />
+                  <Avatar.Fallback>
+                    {session?.user?.name?.charAt(0) || <p className="bg-blue-600 w-full h-full flex items-center justify-center text-white font-bold">U</p>}
+                  </Avatar.Fallback>
+                </>
               }
-            </svg>
+            </Avatar>
           </button>
           <div className="flex items-center gap-3">
             <Link href="/">
@@ -145,26 +137,11 @@ const Navbar = () => {
           )}
         </div>
         {session && (
-          <div className="absolute flex items-center gap-3 top-4 right-5 md:hidden">
+          <div className="absolute flex items-center gap-3 top-5 right-5 md:hidden">
             <span className=" text-gray-300 text-[12px] lg:text-sm">
               {session?.user?.name}
             </span>
-            <Avatar size="sm">
-              {isPending ?
-                <RoundedLoading />
-              : <>
-                  <Avatar.Image
-                    className="object-cover"
-                    alt={session?.user?.name || "User"}
-                    src={session?.user?.image}
-                    referrerPolicy="no-referrer"
-                  />
-                  <Avatar.Fallback>
-                    {session?.user?.name?.charAt(0) || <AiOutlineFileUnknown />}
-                  </Avatar.Fallback>
-                </>
-              }
-            </Avatar>
+           
           </div>
         )}
       </header>
