@@ -65,6 +65,7 @@ Create a .env file in the root directory and add the following:
 ```env
 BETTER_AUTH_SECRET
 BETTER_AUTH_URL
+NEXT_PUBLIC_APP_URL
 BETTER_AUTH_URI
 CLIENT_ID
 CLIENT_SECRET
