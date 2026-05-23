@@ -4,7 +4,7 @@ A modern, high-performance web application designed for book lovers to discover,
 
 ## Live
 
-[View Live Site](https://online-book-borrowing-platform-zeta.vercel.app/)
+[View Live Site](https://online-book-borrowing-platform-delta.vercel.app)
 
 ## Purpose
 
