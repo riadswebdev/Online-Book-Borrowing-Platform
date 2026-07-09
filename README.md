@@ -2,46 +2,58 @@
 
 A modern, high-performance web application designed for book lovers to discover, search, and borrow books online. Built with a focus on speed, security, and a premium user experience.
 
-## Live
+[![Next.js](https://img.shields.io/badge/Next.js-16.2-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2-blue?logo=react)](https://react.dev/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)](https://mongodb.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?logo=tailwind-css)](https://tailwindcss.com/)
+[![Better Auth](https://img.shields.io/badge/Better%20Auth-Enabled-6366F1)](https://better-auth.com/)
 
-[View Live Site](https://online-book-borrowing-platform-delta.vercel.app)
+## Live Demo
 
-## Purpose
+- **Live Site:** [online-book-borrowing-platform-delta.vercel.app](https://online-book-borrowing-platform-delta.vercel.app)
+- **GitHub:** [Online-Book-Borrowing-Platform](https://github.com/riadswebdev/Online-Book-Borrowing-Platform)
 
-The Online Book Borrowing Platform aims to bridge the gap between readers and knowledge. It provides a seamless interface for users to browse a vast library, filter by categories, and manage their personal reading profile, all while ensuring a secure and responsive experience across all devices.
+## Screenshot
+
+![Online Book Borrowing Platform](https://api.microlink.io/?url=https://online-book-borrowing-platform-delta.vercel.app&screenshot=true&meta=false&embed=screenshot.url)
+
+## Project Overview
+
+The Online Book Borrowing Platform bridges the gap between readers and knowledge. It provides a seamless interface for users to browse a vast library, filter by categories, and manage their personal reading profile with a secure, responsive experience across all devices.
 
 ## Key Features
 
-- Secure Authentication: Complete auth system powered by BetterAuth, supporting Email/Password and Google Social Login.
-- Advanced Search: Instant search functionality to find books by title or author.
-- Category Filtering: Interactive sidebar to filter books by genre such as Sci-Fi, History, and Business.
-- User Profiles: Dedicated profile pages where users can view their information and update their name or profile picture.
-- Fully Responsive: Optimized for mobile, tablet, and desktop using Tailwind CSS v4.
-- Modern UI/UX: Built with HeroUI for a sleek, dark-themed aesthetic with smooth transitions and glassmorphism effects.
-- Fast Performance: Leveraging Next.js Server Components for lightning-fast data fetching and SEO optimization.
+- **Secure Authentication** — Email/Password and Google Social Login powered by Better Auth
+- **Advanced Search** — Instant search to find books by title or author
+- **Category Filtering** — Filter books by genre (Sci-Fi, History, Business, and more)
+- **User Profiles** — View and update name or profile picture
+- **Fully Responsive** — Optimized for mobile, tablet, and desktop with Tailwind CSS v4
+- **Modern UI/UX** — HeroUI components with smooth transitions and glassmorphism effects
+- **Fast Performance** — Next.js Server Components for fast data fetching and SEO
 
 ## Tech Stack
 
-- Framework: Next.js (App Router)
-- Authentication: BetterAuth
-- Database: MongoDB
-- Styling: Tailwind CSS v4
-- UI Components: HeroUI
-- Icons: Gravity UI Icons and React Icons
+| Category | Technologies |
+|----------|-------------|
+| Framework | Next.js 16 (App Router), React 19 |
+| Authentication | Better Auth, Google OAuth |
+| Database | MongoDB |
+| Styling | Tailwind CSS v4 |
+| UI | HeroUI, Swiper, React Hot Toast |
 
-## NPM Packages Used
+## Dependencies
 
 | Package | Purpose |
 | :--- | :--- |
-| better-auth | Authentication framework |
-| @better-auth/mongo-adapter | MongoDB adapter for BetterAuth |
-| @heroui/react | Accessible and premium UI components |
-| mongodb | Database driver |
-| react-fast-marquee | Smooth scrolling book banners |
-| react-hot-toast | Modern notification system |
-| swiper | Interactive book sliders |
-| @gravity-ui/icons | Specialized icon set |
-| @iconify/react | Versatile icon integration |
+| `next`, `react`, `react-dom` | Core framework |
+| `better-auth`, `@better-auth/mongo-adapter` | Authentication |
+| `@heroui/react`, `@heroui/styles` | UI components |
+| `mongodb` | Database driver |
+| `tailwindcss` | Styling |
+| `react-fast-marquee` | Scrolling book banners |
+| `react-hot-toast` | Notifications |
+| `swiper` | Book sliders |
+| `@gravity-ui/icons`, `@iconify/react`, `react-icons` | Icons |
 
 ## Getting Started
 
@@ -49,7 +61,7 @@ The Online Book Borrowing Platform aims to bridge the gap between readers and kn
 
 ```bash
 git clone https://github.com/riadswebdev/Online-Book-Borrowing-Platform.git
-cd online-book-borrowing-platform
+cd Online-Book-Borrowing-Platform
 ```
 
 ### 2. Install dependencies
@@ -58,17 +70,17 @@ cd online-book-borrowing-platform
 npm install
 ```
 
-### 3. Environment Variables
+### 3. Environment variables
 
-Create a .env file in the root directory and add the following:
+Create a `.env` file in the root directory:
 
 ```env
-BETTER_AUTH_SECRET
-BETTER_AUTH_URL
-NEXT_PUBLIC_APP_URL
-BETTER_AUTH_URI
-CLIENT_ID
-CLIENT_SECRET
+BETTER_AUTH_SECRET=your_secret_key
+BETTER_AUTH_URL=http://localhost:3000
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+BETTER_AUTH_URI=your_mongodb_uri
+CLIENT_ID=your_google_oauth_client_id
+CLIENT_SECRET=your_google_oauth_client_secret
 ```
 
 ### 4. Run the development server
@@ -77,10 +89,19 @@ CLIENT_SECRET
 npm run dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Available Scripts
+
+- `npm run dev` — Start development server
+- `npm run build` — Build for production
+- `npm run start` — Start production server
+- `npm run lint` — Run ESLint
+
 ## Author
 
-Md Riad Shekh
+**Md Riad Shekh**
 
-- Email: riadswebdev@gmail.com
-- Phone: +8801314674109
-- LinkedIn: linkedin.com/in/riad-shekh
+- Email: [riadswebdev@gmail.com](mailto:riadswebdev@gmail.com)
+- Phone: [+8801314674108](tel:+8801314674108)
+- LinkedIn: [linkedin.com/in/riad-shekh](https://linkedin.com/in/riad-shekh)
