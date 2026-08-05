@@ -2,6 +2,12 @@
 
 A modern, high-performance web application designed for book lovers to discover, search, and borrow books online. Built with a focus on speed, security, and a premium user experience.
 
+## Screenshot
+
+![Online Book Borrowing Platform](https://ik.imagekit.io/i455l48ls/Screenshot%202026-08-05%20131553.png)
+
+---
+
 [![Next.js](https://img.shields.io/badge/Next.js-16.2-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2-blue?logo=react)](https://react.dev/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)](https://mongodb.com/)
@@ -12,10 +18,6 @@ A modern, high-performance web application designed for book lovers to discover,
 
 - **Live Site:** [online-book-borrowing-platform-delta.vercel.app](https://online-book-borrowing-platform-delta.vercel.app)
 - **GitHub:** [Online-Book-Borrowing-Platform](https://github.com/riadswebdev/Online-Book-Borrowing-Platform)
-
-## Screenshot
-
-![Online Book Borrowing Platform](https://ik.imagekit.io/i455l48ls/Screenshot%202026-08-05%20131553.png)
 
 ## Project Overview
 
