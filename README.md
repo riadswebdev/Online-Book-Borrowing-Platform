@@ -15,7 +15,7 @@ A modern, high-performance web application designed for book lovers to discover,
 
 ## Screenshot
 
-![Online Book Borrowing Platform](https://api.microlink.io/?url=https://online-book-borrowing-platform-delta.vercel.app&screenshot=true&meta=false&embed=screenshot.url)
+![Online Book Borrowing Platform](https://ik.imagekit.io/i455l48ls/Screenshot%202026-08-05%20131553.png)
 
 ## Project Overview
 
